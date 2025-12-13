@@ -1,0 +1,180 @@
+<!doctype html> 
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Wiki Creativa — Cine, Hardware y Programación</title>
+  <meta name="description" content="Wiki práctica sobre composición cinematográfica, hardware y programación. Recursos reales, ejercicios y videos."/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;font-family:Inter, system-ui, sans-serif;color:#0b0b0b;background:#f7f8fb}
+    a{color:#0b6fb1;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    :root{
+      --max-w:1100px;
+      --accent:#0b6fb1;
+      --accent-2:#6c5ce7;
+      --muted:#6b7280;
+      --card-bg:#ffffff;
+      --radius:10px;
+      --gap:16px;
+    }
+
+    .wrap{max-width:var(--max-w);margin:24px auto;padding:18px}
+
+    header.site{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px;border-radius:var(--radius);
+      background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.04)
+    }
+
+    .brand h1{margin:0;font-size:1.1rem}
+    .brand p{margin:0;font-size:.8rem;color:var(--muted)}
+
+    .layout{display:grid;grid-template-columns:260px 1fr;gap:16px;margin-top:18px}
+
+    aside.sidebar, main.card{
+      background:#fff;padding:16px;border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(0,0,0,.03)
+    }
+
+    .navlist{list-style:none;padding:0;margin:12px 0}
+    .navlist li{margin-bottom:6px}
+    .navlist a{display:block;padding:8px;border-radius:8px}
+    .navlist a:hover{background:#f1f6fb}
+
+    .topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:18px}
+
+    .topic{
+      border:1px solid #eef2f7;border-radius:12px;padding:14px;
+      display:flex;flex-direction:column;gap:8px
+    }
+
+    .topic h3{margin:0;color:var(--accent-2)}
+    .topic p{font-size:.92rem;color:var(--muted)}
+    .btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;width:max-content}
+
+    section.detail{margin-top:28px}
+    section.detail h3{color:var(--accent-2)}
+    iframe{width:100%;height:315px;border-radius:12px;border:none;margin:12px 0}
+
+    ul.check{padding-left:18px}
+    ul.check li{margin-bottom:6px}
+
+    footer{text-align:center;margin-top:24px;font-size:.85rem;color:var(--muted)}
+
+    @media(max-width:880px){
+      .layout{grid-template-columns:1fr}
+      aside.sidebar{order:2}
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header class="site">
+  <div class="brand">
+    <h1>Wiki Creativa</h1>
+    <p>Cine · Hardware · Programación</p>
+  </div>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <h2>Temas</h2>
+  <ul class="navlist">
+    <li><a href="#cine">🎬 Composición cinematográfica</a></li>
+    <li><a href="#hardware">💻 Hardware & Tecnología</a></li>
+    <li><a href="#programacion">👨‍💻 Programación aplicada</a></li>
+  </ul>
+</aside>
+
+<main class="card">
+
+<section class="topics">
+  <article class="topic">
+    <h3>Composición cinematográfica</h3>
+    <p>Lenguaje visual, encuadres y narrativa audiovisual aplicada al cine y contenido digital.</p>
+    <a class="btn" href="#cine">Explorar</a>
+  </article>
+
+  <article class="topic">
+    <h3>Hardware & tecnología</h3>
+    <p>Componentes, rendimiento real y cómo elegir hardware según tu uso creativo o técnico.</p>
+    <a class="btn" href="#hardware">Explorar</a>
+  </article>
+
+  <article class="topic">
+    <h3>Programación aplicada</h3>
+    <p>Lógica, pensamiento computacional y ejemplos prácticos para proyectos reales.</p>
+    <a class="btn" href="#programacion">Explorar</a>
+  </article>
+</section>
+
+<!-- ================= CINE ================= -->
+<section id="cine" class="detail">
+  <h3>🎬 Composición cinematográfica</h3>
+  <p><strong>¿Para qué sirve?</strong> Dirigir la atención, contar historias visualmente y provocar emociones.</p>
+
+  <ul class="check">
+    <li>Regla de los tercios y ruptura consciente</li>
+    <li>Simetría, líneas guía y profundidad</li>
+    <li>Composición narrativa (qué cuenta el plano)</li>
+  </ul>
+
+  <p><strong>Ejercicio práctico:</strong> Graba una escena fija aplicando 3 tipos de composición y analiza su impacto.</p>
+
+  <iframe src="https://www.youtube.com/embed/kEaF3gc5z74" allowfullscreen></iframe>
+  <p>Canal recomendado: <a href="https://www.youtube.com/@JordiMaquiavelo" target="_blank">Jordi Maquiavelo</a></p>
+</section>
+
+<!-- ================= HARDWARE ================= -->
+<section id="hardware" class="detail">
+  <h3>💻 Hardware & Tecnología</h3>
+  <p><strong>Objetivo:</strong> Entender cómo funciona el hardware para tomar decisiones informadas.</p>
+
+  <ul class="check">
+    <li>CPU vs GPU: cuándo importa cada una</li>
+    <li>Cuellos de botella reales</li>
+    <li>Hardware para edición, gaming y desarrollo</li>
+  </ul>
+
+  <p><strong>Ejercicio práctico:</strong> Diseña una PC ideal según tu flujo de trabajo.</p>
+
+  <iframe src="https://www.youtube.com/embed/FdZ8LKiJBhQ" allowfullscreen></iframe>
+  <p>Canal recomendado: <a href="https://www.youtube.com/@NateGentile7" target="_blank">Nate Gentile</a></p>
+</section>
+
+<!-- ================= PROGRAMACIÓN ================= -->
+<section id="programacion" class="detail">
+  <h3>👨‍💻 Programación aplicada</h3>
+  <p><strong>Enfoque:</strong> Resolver problemas, no memorizar código.</p>
+
+  <ul class="check">
+    <li>Pensamiento lógico y estructuras básicas</li>
+    <li>Programar para crear herramientas reales</li>
+    <li>Automatización y eficiencia</li>
+  </ul>
+
+  <p><strong>Ejercicio práctico:</strong> Automatiza una tarea repetitiva de tu día a día.</p>
+
+  <iframe src="https://www.youtube.com/embed/8PopR3x-VMY" allowfullscreen></iframe>
+  <p>Canales sugeridos:  
+    <a href="https://www.youtube.com/@midudev" target="_blank">midudev</a>,  
+    <a href="https://www.youtube.com/@FaztCode" target="_blank">Fazt</a>
+  </p>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <p>Wiki Creativa — Hecha para aprender de verdad, no solo mirar</p>
+</footer>
+
+</div>
+</body>
+</html>
