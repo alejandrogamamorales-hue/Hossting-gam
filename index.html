@@ -1,27 +1,16 @@
-<!doctype html>
+<!doctype html> 
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBPV1HKRQQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NBPV1HKRQQ');
-</script>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Wiki UX  Diseño — Concepto</title>
-  <meta name="description" content="Wiki para estudiantes: experiencia de usuario, diseño web, design thinking y más. Concepto accesible y responsivo."/>
+  <title>Wiki Creativa — Cine, Hardware y Programación</title>
+  <meta name="description" content="Wiki práctica sobre composición cinematográfica, hardware y programación. Recursos reales, ejercicios y videos."/>
   <style>
-    /* RESET simple */
     *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#0b0b0b;background:#f7f8fb}
+    html,body{margin:0;font-family:Inter, system-ui, sans-serif;color:#0b0b0b;background:#f7f8fb}
     a{color:#0b6fb1;text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* Variables de diseño */
     :root{
       --max-w:1100px;
       --accent:#0b6fb1;
@@ -30,237 +19,165 @@
       --card-bg:#ffffff;
       --radius:10px;
       --gap:16px;
-      --focus: #ffcc00;
     }
 
-    /* contenedor central */
     .wrap{max-width:var(--max-w);margin:24px auto;padding:18px}
 
-    /* Skip link (accesibilidad) */
-    .skip{position:absolute;left:8px;top:-40px;background:#000;color:#fff;padding:8px 10px;border-radius:6px;z-index:999}
-    .skip:focus{top:8px;outline:3px solid var(--focus)}
-
     header.site{
-      display:flex;align-items:center;gap:12px;justify-content:space-between;padding:12px;border-radius:var(--radius);background:linear-gradient(90deg,#fff,#fbfdff);box-shadow:0 6px 18px rgba(13,20,30,0.04)
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px;border-radius:var(--radius);
+      background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.04)
     }
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand img{width:56px;height:56px;border-radius:8px;object-fit:cover}
-    .brand h1{margin:0;font-size:1.05rem}
-    .brand p{margin:0;font-size:.78rem;color:var(--muted)}
 
-    /* Buscador sencillo */
-    .search{display:flex;gap:8px;align-items:center}
-    .search input{padding:8px 12px;border-radius:8px;border:1px solid #e5e7eb;background:white;min-width:220px}
-    .search button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
-    .search input:focus,.search button:focus{outline:3px solid rgba(255,204,0,.2)}
+    .brand h1{margin:0;font-size:1.1rem}
+    .brand p{margin:0;font-size:.8rem;color:var(--muted)}
 
-    /* layout principal: sidebar + contenido */
-    .layout{display:grid;grid-template-columns:270px 1fr;gap:var(--gap);margin-top:18px}
-    /* sidebar */
-    aside.sidebar{background:var(--card-bg);padding:14px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(13,20,30,0.03)}
-    aside h2{font-size:.95rem;margin:6px 0;color:var(--accent)}
-    .navlist{list-style:none;padding:0;margin:12px 0;display:flex;flex-direction:column;gap:6px}
-    .navlist a{display:block;padding:8px;border-radius:8px;color:#0b0b0b}
-    .navlist a:hover, .navlist a:focus{background:#f1f6fb;outline:3px solid transparent}
+    .layout{display:grid;grid-template-columns:260px 1fr;gap:16px;margin-top:18px}
 
-    /* contenido */
-    main.card{background:var(--card-bg);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(13,20,30,0.03)}
-    .intro{display:flex;gap:18px;align-items:flex-start}
-    .intro .meta{color:var(--muted);font-size:.9rem}
-    .topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:18px}
+    aside.sidebar, main.card{
+      background:#fff;padding:16px;border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(0,0,0,.03)
+    }
+
+    .navlist{list-style:none;padding:0;margin:12px 0}
+    .navlist li{margin-bottom:6px}
+    .navlist a{display:block;padding:8px;border-radius:8px}
+    .navlist a:hover{background:#f1f6fb}
+
+    .topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:18px}
 
     .topic{
-      background:linear-gradient(180deg,#fff,#fbfdff);padding:14px;border-radius:12px;border:1px solid #eef2f7;
-      min-height:120px;display:flex;flex-direction:column;justify-content:space-between;
+      border:1px solid #eef2f7;border-radius:12px;padding:14px;
+      display:flex;flex-direction:column;gap:8px
     }
-    .topic h3{margin:0;color:var(--accent-2);font-size:1.03rem}
-    .topic p{margin:8px 0;color:var(--muted);font-size:.92rem}
-    .topic a.btn{align-self:flex-start;background:var(--accent);color:#fff;padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:600}
 
-    /* recursos y footer */
-    .resources{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .res{background:#fff;padding:12px;border-radius:10px;border:1px solid #efeff2;color:var(--muted);font-size:.9rem}
+    .topic h3{margin:0;color:var(--accent-2)}
+    .topic p{font-size:.92rem;color:var(--muted)}
+    .btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;width:max-content}
 
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:.88rem}
+    section.detail{margin-top:28px}
+    section.detail h3{color:var(--accent-2)}
+    iframe{width:100%;height:315px;border-radius:12px;border:none;margin:12px 0}
 
-    /* responsive */
-    @media (max-width:880px){
-      .layout{grid-template-columns:1fr; }
+    ul.check{padding-left:18px}
+    ul.check li{margin-bottom:6px}
+
+    footer{text-align:center;margin-top:24px;font-size:.85rem;color:var(--muted)}
+
+    @media(max-width:880px){
+      .layout{grid-template-columns:1fr}
       aside.sidebar{order:2}
-      main.card{order:1}
-      .brand img{display:none}
-      .search input{min-width:140px}
     }
   </style>
 </head>
+
 <body>
-  <a href="#main" class="skip">Saltar a contenido</a>
+<div class="wrap">
 
-  <div class="wrap">
-    <header class="site" role="banner" aria-label="Encabezado principal">
-      <div class="brand" role="img" aria-label="Logo Wiki UX">
-        <img src="https://via.placeholder.com/120x120.png?text=Wiki" alt="Logotipo de la Wiki"/>
-        <div>
-          <h1>Wiki UX  Diseño</h1>
-          <p>Guía práctica para los primeros ciclos</p>
-        </div>
-      </div>
-
-      <div class="search" role="search" aria-label="Buscador de la wiki">
-        <input id="q" aria-label="Buscar en la wiki" placeholder="Buscar tema, p. ej. 'arquitectura de la información'"/>
-        <button aria-label="Buscar">Buscar</button>
-      </div>
-    </header>
-
-    <div class="layout" role="region" aria-label="Principal">
-      <aside class="sidebar" role="complementary" aria-labelledby="menuTitle">
-        <h2 id="menuTitle">Temas</h2>
-        <nav aria-label="Navegación de temas">
-          <ul class="navlist">
-            <li><a href="#ux">Experiencia de usuario (UX)</a></li>
-            <li><a href="#web">Diseño web</a></li>
-            <li><a href="#dt">Design thinking</a></li>
-            <li><a href="#dcu">Diseño centrado en el usuario</a></li>
-            <li><a href="#di">Diseño de interacción</a></li>
-            <li><a href="#ai">Arquitectura de la información</a></li>
-            <li><a href="#nav">Diseño de navegación</a></li>
-            <li><a href="#dv">Diseño visual</a></li>
-          </ul>
-        </nav>
-
-        <hr aria-hidden="true"/>
-
-        <h2>Recursos rápidos</h2>
-        <div class="resources" aria-hidden="false">
-          <div class="res">Glosario PDF</div>
-          <div class="res">Checklist de UX</div>
-          <div class="res">Plantillas (Wireframes)</div>
-          <div class="res">Videos intro</div>
-        </div>
-      </aside>
-
-      <main id="main" class="card" role="main" aria-labelledby="mainTitle">
-        <div class="intro">
-          <div>
-            <h2 id="mainTitle">Wiki: conceptos esenciales para empezar</h2>
-            <p class="meta">Diseñada para estudiantes de 18–23 años en primeros ciclos. Contenidos breves, visuales y con ejercicios prácticos.</p>
-            <p>Esta wiki centraliza definiciones, ejemplos, plantillas y actividades para que puedas aplicar lo aprendido en tus proyectos académicos. Está pensada para consultas rápidas y estudio guiado.</p>
-          </div>
-        </div>
-
-        <section class="topics" aria-label="Temas destacados">
-          <article id="ux" class="topic" aria-labelledby="uxTitle">
-            <div>
-              <h3 id="uxTitle">Experiencia de Usuario (UX)</h3>
-              <p>Definición, procesos (investigación, prototipado, testing) y buenas prácticas para diseñar experiencias útiles y significativas.</p>
-            </div>
-            <a class="btn" href="#ux-detail">Ver</a>
-          </article>
-
-          <article id="web" class="topic" aria-labelledby="webTitle">
-            <div>
-              <h3 id="webTitle">Diseño web</h3>
-              <p>Principios de diseño responsive, accesibilidad, HTML/CSS y cómo estructurar páginas para usuarios reales.</p>
-            </div>
-            <a class="btn" href="#web-detail">Ver</a>
-          </article>
-
-          <article id="dt" class="topic" aria-labelledby="dtTitle">
-            <div>
-              <h3 id="dtTitle">Design Thinking</h3>
-              <p>Método centrado en la solución: empatizar, definir, idear, prototipar y testear con usuarios.</p>
-            </div>
-            <a class="btn" href="#dt-detail">Ver</a>
-          </article>
-
-          <article id="dcu" class="topic" aria-labelledby="dcuTitle">
-            <div>
-              <h3 id="dcuTitle">Diseño centrado en el usuario</h3>
-              <p>Cómo integrar investigaciones y feedback real para priorizar necesidades y accesibilidad.</p>
-            </div>
-            <a class="btn" href="#dcu-detail">Ver</a>
-          </article>
-
-          <article id="di" class="topic" aria-labelledby="diTitle">
-            <div>
-              <h3 id="diTitle">Diseño de interacción</h3>
-              <p>Patrones, microinteracciones, affordances y diseño de flujos que facilitan tareas.</p>
-            </div>
-            <a class="btn" href="#di-detail">Ver</a>
-          </article>
-
-          <article id="ai" class="topic" aria-labelledby="aiTitle">
-            <div>
-              <h3 id="aiTitle">Arquitectura de la información</h3>
-              <p>Clasificación, taxonomías, mapas de sitio y cómo organizar contenido para encontrarlo rápido.</p>
-            </div>
-            <a class="btn" href="#ai-detail">Ver</a>
-          </article>
-
-          <article id="nav" class="topic" aria-labelledby="navTitle">
-            <div>
-              <h3 id="navTitle">Diseño de navegación</h3>
-              <p>Menus, breadcrumbs, búsqueda interna y patrones de navegación para distintos dispositivos.</p>
-            </div>
-            <a class="btn" href="#nav-detail">Ver</a>
-          </article>
-
-          <article id="dv" class="topic" aria-labelledby="dvTitle">
-            <div>
-              <h3 id="dvTitle">Diseño visual</h3>
-              <p>Colores, tipografías, jerarquía visual y accesibilidad visual en interfaces.</p>
-            </div>
-            <a class="btn" href="#dv-detail">Ver</a>
-          </article>
-        </section>
-
-        <section aria-label="Cómo usar la wiki" style="margin-top:18px">
-          <h3>Cómo usar esta wiki</h3>
-          <ol>
-            <li>Busca un concepto o tema con la barra de búsqueda.</li>
-            <li>Lee la definición y mira el ejemplo práctico.</li>
-            <li>Descarga plantillas y realiza los ejercicios sugeridos.</li>
-            <li>Comparte tus aportes en la sección de comentarios del artículo.</li>
-          </ol>
-        </section>
-
-        <section aria-label="Contacto y colaboración" style="margin-top:18px">
-          <h3>Colabora</h3>
-          <p>Si quieres aportar recursos o corregir contenidos contacta al equipo coordinador o sube tu propuesta (proyecto académico aprobado por el profesor).</p>
-        </section>
-
-      </main>
-    </div>
-
-    <footer role="contentinfo">
-      <p>Wiki UX  Diseño — Proyecto educativo • Hecho por estudiantes • Para los primeros ciclos</p>
-      <p style="font-size:.85rem;color:var(--muted)">Sugerencias: usar la wiki como complemento de clases, práctica y portafolio.</p>
-    </footer>
+<header class="site">
+  <div class="brand">
+    <h1>Wiki Creativa</h1>
+    <p>Cine · Hardware · Programación</p>
   </div>
+</header>
 
-  <!-- Pequeño script para ejemplo de accesibilidad y UX -->
-  <script>
-    // Cerrar menus simulados o mejorar foco (ejemplo conceptual)
-    document.querySelectorAll('.navlist a').forEach(function(link){
-      link.addEventListener('click', function(e){
-        // En una wiki real aquí iría la carga de contenido dinamico o scroll con smooth
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          target.scrollIntoView({behavior:'smooth', block:'start'});
-          target.querySelector('h3,h2')?.focus?.();
-        }
-      });
-    });
+<div class="layout">
 
-    // Demo: botón buscar no realiza búsqueda real (concepto)
-    document.querySelector('.search button').addEventListener('click', function(e){
-      e.preventDefault();
-      const q = document.getElementById('q').value.trim();
-      if(!q){ alert('Escribe un término para buscar (demo).'); return; }
-      alert('Búsqueda demo: «'+q+'» — En la versión final integra un motor de búsqueda o índice.');
-    });
-  </script>
+<aside class="sidebar">
+  <h2>Temas</h2>
+  <ul class="navlist">
+    <li><a href="#cine">🎬 Composición cinematográfica</a></li>
+    <li><a href="#hardware">💻 Hardware & Tecnología</a></li>
+    <li><a href="#programacion">👨‍💻 Programación aplicada</a></li>
+  </ul>
+</aside>
+
+<main class="card">
+
+<section class="topics">
+  <article class="topic">
+    <h3>Composición cinematográfica</h3>
+    <p>Lenguaje visual, encuadres y narrativa audiovisual aplicada al cine y contenido digital.</p>
+    <a class="btn" href="#cine">Explorar</a>
+  </article>
+
+  <article class="topic">
+    <h3>Hardware & tecnología</h3>
+    <p>Componentes, rendimiento real y cómo elegir hardware según tu uso creativo o técnico.</p>
+    <a class="btn" href="#hardware">Explorar</a>
+  </article>
+
+  <article class="topic">
+    <h3>Programación aplicada</h3>
+    <p>Lógica, pensamiento computacional y ejemplos prácticos para proyectos reales.</p>
+    <a class="btn" href="#programacion">Explorar</a>
+  </article>
+</section>
+
+<!-- ================= CINE ================= -->
+<section id="cine" class="detail">
+  <h3>🎬 Composición cinematográfica</h3>
+  <p><strong>¿Para qué sirve?</strong> Dirigir la atención, contar historias visualmente y provocar emociones.</p>
+
+  <ul class="check">
+    <li>Regla de los tercios y ruptura consciente</li>
+    <li>Simetría, líneas guía y profundidad</li>
+    <li>Composición narrativa (qué cuenta el plano)</li>
+  </ul>
+
+  <p><strong>Ejercicio práctico:</strong> Graba una escena fija aplicando 3 tipos de composición y analiza su impacto.</p>
+
+  <iframe src="https://www.youtube.com/embed/kEaF3gc5z74" allowfullscreen></iframe>
+  <p>Canal recomendado: <a href="https://www.youtube.com/@JordiMaquiavelo" target="_blank">Jordi Maquiavelo</a></p>
+</section>
+
+<!-- ================= HARDWARE ================= -->
+<section id="hardware" class="detail">
+  <h3>💻 Hardware & Tecnología</h3>
+  <p><strong>Objetivo:</strong> Entender cómo funciona el hardware para tomar decisiones informadas.</p>
+
+  <ul class="check">
+    <li>CPU vs GPU: cuándo importa cada una</li>
+    <li>Cuellos de botella reales</li>
+    <li>Hardware para edición, gaming y desarrollo</li>
+  </ul>
+
+  <p><strong>Ejercicio práctico:</strong> Diseña una PC ideal según tu flujo de trabajo.</p>
+
+  <iframe src="https://www.youtube.com/embed/FdZ8LKiJBhQ" allowfullscreen></iframe>
+  <p>Canal recomendado: <a href="https://www.youtube.com/@NateGentile7" target="_blank">Nate Gentile</a></p>
+</section>
+
+<!-- ================= PROGRAMACIÓN ================= -->
+<section id="programacion" class="detail">
+  <h3>👨‍💻 Programación aplicada</h3>
+  <p><strong>Enfoque:</strong> Resolver problemas, no memorizar código.</p>
+
+  <ul class="check">
+    <li>Pensamiento lógico y estructuras básicas</li>
+    <li>Programar para crear herramientas reales</li>
+    <li>Automatización y eficiencia</li>
+  </ul>
+
+  <p><strong>Ejercicio práctico:</strong> Automatiza una tarea repetitiva de tu día a día.</p>
+
+  <iframe src="https://www.youtube.com/embed/8PopR3x-VMY" allowfullscreen></iframe>
+  <p>Canales sugeridos:  
+    <a href="https://www.youtube.com/@midudev" target="_blank">midudev</a>,  
+    <a href="https://www.youtube.com/@FaztCode" target="_blank">Fazt</a>
+  </p>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <p>Wiki Creativa — Hecha para aprender de verdad, no solo mirar</p>
+</footer>
+
+</div>
+</body>
+</html>
 </body>
 </html>
 
